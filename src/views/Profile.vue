@@ -1,11 +1,11 @@
 <template>
     <div v-motion-slide-visible-bottom  class="flex flex-col items-center mt-10" v-if="showContent">
-      <br><br><br><br><br><br><br>
-      <img src="../assets/63502100008-1.jpg" class="rounded-full h-40 w-40 object-cover border-4 border-white shadow-lg" alt="Profile Picture">
+      <br> <br> <br> <br> <br> <br> <br> <br>  <br>  
+      <img src="../assets/profile.jpg" class="rounded-full h-40 w-40 object-cover border-4 border-white shadow-lg" alt="Profile Picture">
       <h1 class="text-3xl mt-6 font-bold text-black-400">Nontachai Tongnim</h1>
-      <p class="text-lg text-black-300 mt-2 ">Programmer/Fullstack-Developerss</p>
-   
-      <br> <br> <br> <br> <br> <br> <br> <br>  <br>  <br> 
+      <p class="text-lg text-black-300 mt-2 ">Programmer/Fullstack Developer</p>
+      <br>  <br>  <br>  <br>  <br>  
+     
     </div>
   </template>
   

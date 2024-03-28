@@ -1,39 +1,37 @@
 <script setup>
 
 import Profile from "./views/Profile.vue";
-import Cv from "./views/Cv.vue";
+
 import About from "./views/About.vue";
 import Skill from "./views/Skill.vue";
 import Contact from './views/Contact.vue'
 
-// Import jQuery
 import $ from 'jquery';
 import { ref, onMounted, onUnmounted } from 'vue';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 
-// State to track whether navbar is fixed or not
+
 const isNavbarFixed = ref(false);
 
-// Function to check scroll position and toggle fixed navbar
+
 const handleScroll = () => {
   isNavbarFixed.value = window.scrollY > 0;
 }
 
-// Add event listener when component is mounted
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);
 });
 
-// Remove event listener when component is unmounted to prevent memory leaks
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll);
 });
-// Smooth scrolling function
+
 const smoothScroll = (target) => {
   $('html, body').animate({
     scrollTop: $(target).offset().top
-  }, 7); // Adjust scroll speed here
+  }, 7); 
 }
 const scrollToSection = (target) => {
   smoothScroll(target);
@@ -41,7 +39,7 @@ const scrollToSection = (target) => {
 </script>
 
 <template>
-  <div>
+  <div class="overflow-x-hidden">
     <Disclosure as="nav" :class="{ 'fixed top-0 w-full z-10': isNavbarFixed }" class="bg-white transition-all" v-slot="{ open }">
       <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-center">
@@ -76,11 +74,11 @@ const scrollToSection = (target) => {
           <p @click="scrollToSection('#contact')" class="block rounded-md px-3 py-2 text-base font-medium text-black hover:bg-green-500 hover:text-white">Contact</p>
         </div>
       </DisclosurePanel>
-    </Disclosure>
+    </Disclosure><div class="w-full max-w-screen-lg mx-auto">
     <Profile id="profile" />
     <Skill id="skill" />
     <About id="about" />
-    <Contact id="contact" />
+    <Contact id="contact" /></div>
   </div>
 </template>
 
@@ -88,9 +86,6 @@ const scrollToSection = (target) => {
 
 
 <script>
-
-
-// jQuery click event listeners for navigation links
 $(document).ready(function() {
   $('a[href^="#"]').on('click', function(event) {
     event.preventDefault();

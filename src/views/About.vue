@@ -73,18 +73,19 @@
 
         <!-- Right Card -->
         <div
-          v-motion-roll-visible-right
-          class="max-w-sm rounded overflow-hidden shadow-lg m-4 flex justify-center items-center"
-        >
-          <img class="w-40 h-40" src="../assets/pk.jpg" alt="Card image" />
-          <div class="px-6 py-4">
+        v-motion-roll-visible-right
+        class="max-w-sm rounded overflow-hidden shadow-lg m-4 flex justify-center items-center md:flex-col"
+    >
+        <img class="w-40 h-40 md:w-full md:h-auto" src="../assets/pk.jpg" alt="Card image" />
+        <div class="px-6 py-4">
             <div class="font-bold text-xl mb-2">High School in Art-Maths</div>
             <p class="text-gray-700 text-base">
-              Prakanongpittayalai School<br />Year of Graduation: 2020
-              <br />GPA: 3.28
+                Prakanongpittayalai School<br />Year of Graduation: 2020
+                <br />GPA: 3.28
             </p>
-          </div>
         </div>
+    </div>
+    
       </section>
     </div>
 
